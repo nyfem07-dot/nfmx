@@ -18,70 +18,70 @@ export const categories: Category[] = [
     name: "Media",
     description: "Compress, convert and play audio and video.",
     icon: Clapperboard,
-    accent: "#6C6FC4",
+    accent: "#8B5CF6",
   },
   {
     slug: "images",
     name: "Images",
     description: "Resize, compress and convert pictures.",
     icon: ImageIcon,
-    accent: "#C08A3E",
+    accent: "#EC4899",
   },
   {
     slug: "pdf",
     name: "PDF & Documents",
     description: "Merge, split and shrink PDF files.",
     icon: FileText,
-    accent: "#B0533F",
+    accent: "#F43F5E",
   },
   {
     slug: "internet",
     name: "Internet",
     description: "Tools for links, codes and the open web.",
     icon: Globe,
-    accent: "#3E8FB0",
+    accent: "#06B6D4",
   },
   {
     slug: "text",
     name: "Text",
     description: "Clean up, count and format plain text.",
     icon: PenLine,
-    accent: "#4F8B5B",
+    accent: "#22C55E",
   },
   {
     slug: "converters",
     name: "Converters",
     description: "Switch between units, formats and currencies.",
     icon: RefreshCw,
-    accent: "#8A7BC0",
+    accent: "#3B82F6",
   },
   {
     slug: "privacy",
     name: "Privacy & Security",
     description: "Keep accounts and files safer.",
     icon: ShieldCheck,
-    accent: "#3E6E8E",
+    accent: "#14B8A6",
   },
   {
     slug: "social",
     name: "Social & Sharing",
     description: "Prepare content for sharing anywhere.",
     icon: Share2,
-    accent: "#C4667E",
+    accent: "#F97316",
   },
   {
     slug: "calculators",
     name: "Calculators",
     description: "Quick math for everyday decisions.",
     icon: Calculator,
-    accent: "#6E8C4A",
+    accent: "#EAB308",
   },
   {
     slug: "ai",
     name: "AI Tools",
     description: "Small, focused tools powered by AI.",
     icon: Sparkles,
-    accent: "#A0522D",
+    accent: "#A855F7",
   },
 ];
 
@@ -91,7 +91,7 @@ export function getCategory(slug: string): Category | undefined {
 
 export function categoryToolCount(
   slug: CategorySlug,
-  counts: Record<string, number>
+  counts: Record<string, number>,
 ): number {
   return counts[slug] ?? 0;
 }

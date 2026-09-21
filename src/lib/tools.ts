@@ -49,7 +49,7 @@ export const tools: Tool[] = [
     name: "Compress Image",
     shortDescription: "Shrink JPG, PNG or WebP files without losing much quality.",
     helpText:
-      "Compression happens entirely in your browser using the canvas API. Pick a quality level and Toolbox re-encodes the image, so nothing is uploaded anywhere.",
+      "Compression happens entirely in your browser using the canvas API. Pick a quality level and NFMX re-encodes the image, so nothing is uploaded anywhere.",
     category: "images",
     icon: Minimize2,
     status: "live",
@@ -118,7 +118,7 @@ export const tools: Tool[] = [
     name: "PDF Compressor",
     shortDescription: "Reduce a PDF's file size for easier sharing.",
     helpText:
-      "Toolbox re-saves the PDF with its objects optimized. Savings vary a lot depending on what's inside the file Ã¢â‚¬â€ image-heavy PDFs shrink the most.",
+      "NFMX re-saves the PDF with its objects optimized. Savings vary a lot depending on what's inside the file Ã¢â‚¬â€ image-heavy PDFs shrink the most.",
     category: "pdf",
     icon: FileDown,
     status: "live",

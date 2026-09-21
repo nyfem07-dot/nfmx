@@ -19,7 +19,7 @@ export async function generateMetadata({
   const category = getCategory(slug);
   if (!category) return {};
   return {
-    title: `${category.name} — Toolbox`,
+    title: `${category.name} — NFMX`,
     description: category.description,
   };
 }

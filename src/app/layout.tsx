@@ -5,12 +5,23 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Toolbox — Everything useful, in one place",
+  title: "NFMX — Everything useful, in one place",
   description:
-    "A fast, honest home for the small tools you reach for every day: image, PDF, text, and converter utilities that run right in your browser.",
+    "NFMX is a growing collection of fast, focused tools for images, PDFs, text, media, converters and more.",
+  manifest: "/manifest.json",
+  applicationName: "NFMX",
+  appleWebApp: {
+    capable: true,
+    title: "NFMX",
+    statusBarStyle: "default",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning className="h-full">
       <body className="flex min-h-full flex-col bg-paper text-ink antialiased">

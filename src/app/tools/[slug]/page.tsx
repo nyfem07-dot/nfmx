@@ -15,9 +15,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const tool = getTool(slug);
+
   if (!tool) return {};
+
   return {
-    title: `${tool.name} — Toolbox`,
+    title: `${tool.name} — NFMX`,
     description: tool.shortDescription,
   };
 }
@@ -29,6 +31,7 @@ export default async function ToolPage({
 }) {
   const { slug } = await params;
   const tool = getTool(slug);
+
   if (!tool) notFound();
 
   return (

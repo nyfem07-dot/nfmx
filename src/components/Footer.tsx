@@ -35,6 +35,7 @@ export function Footer() {
                 </li>
               </ul>
             </div>
+
             <div>
               <h3 className="text-xs font-medium text-ink-muted">Categories</h3>
               <ul className="mt-3 flex flex-col gap-2">
@@ -54,7 +55,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-ink-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Toolbox. Built for the browser.</p>
+          <p>© {new Date().getFullYear()} NFMX. Built for the browser.</p>
           <p>Most tools run entirely on your device — files aren&apos;t uploaded anywhere.</p>
         </div>
       </div>

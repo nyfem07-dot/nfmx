@@ -19,17 +19,21 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/90 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-5 sm:px-8">
-        <Link href="/" className="shrink-0" onClick={() => setMobileOpen(false)}>
+      <div className="mx-auto flex h-16 max-w-6xl items-center gap-5 px-5 sm:px-8">
+        <Link
+          href="/"
+          className="shrink-0"
+          onClick={() => setMobileOpen(false)}
+        >
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-ink-muted transition-colors hover:text-ink"
+              className="text-[0.95rem] font-medium text-ink-muted transition-colors hover:text-ink"
             >
               {link.label}
             </Link>
@@ -45,21 +49,23 @@ export function Header() {
             type="button"
             onClick={() => setSearchOpen((v) => !v)}
             aria-label="Search"
-            className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-border text-ink-muted hover:border-border-strong hover:text-ink md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-[7px] border border-border text-ink-muted transition-colors hover:border-border-strong hover:text-ink md:hidden"
           >
-            <Search className="h-[17px] w-[17px]" strokeWidth={1.75} />
+            <Search className="h-[18px] w-[18px]" strokeWidth={1.9} />
           </button>
+
           <ThemeToggle />
+
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="flex h-9 w-9 items-center justify-center rounded-[6px] border border-border text-ink-muted hover:border-border-strong hover:text-ink md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-[7px] border border-border text-ink-muted transition-colors hover:border-border-strong hover:text-ink md:hidden"
           >
             {mobileOpen ? (
-              <X className="h-[17px] w-[17px]" strokeWidth={1.75} />
+              <X className="h-[18px] w-[18px]" strokeWidth={1.9} />
             ) : (
-              <Menu className="h-[17px] w-[17px]" strokeWidth={1.75} />
+              <Menu className="h-[18px] w-[18px]" strokeWidth={1.9} />
             )}
           </button>
         </div>
@@ -67,7 +73,11 @@ export function Header() {
 
       {searchOpen && (
         <div className="border-t border-border px-5 py-3 md:hidden">
-          <SearchBox size="compact" autoFocus onNavigate={() => setSearchOpen(false)} />
+          <SearchBox
+            size="compact"
+            autoFocus
+            onNavigate={() => setSearchOpen(false)}
+          />
         </div>
       )}
 
@@ -78,7 +88,7 @@ export function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="border-b border-border py-3 text-sm text-ink-muted last:border-b-0 hover:text-ink"
+              className="border-b border-border py-3.5 text-[0.95rem] font-medium text-ink-muted last:border-b-0 hover:text-ink"
             >
               {link.label}
             </Link>

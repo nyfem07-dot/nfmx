@@ -37,7 +37,7 @@ export function JsonFormatter() {
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder='Paste JSON here, e.g. {"name":"Toolbox","ready":true}'
+        placeholder='Paste JSON here, e.g. {"name":"NFMX","ready":true}'
         rows={10}
         className="w-full resize-y rounded-[6px] border border-border-strong bg-paper p-3 font-mono text-[0.83rem] text-ink outline-none focus:border-ink"
         spellCheck={false}
