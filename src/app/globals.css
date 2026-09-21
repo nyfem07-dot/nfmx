@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #fafaf8;
+  --paper-raised: #ffffff;
+  --ink: #1c1b19;
+  --ink-muted: #6b675f;
+  --ink-faint: #99958a;
+  --border: #e4e1d9;
+  --border-strong: #d2cec2;
+  --brass: #a5691f;
+  --brass-ink: #ffffff;
+  --brass-tint: #f2e6d3;
+  --focus-ring: #a5691f;
+}
+
+.dark {
+  --paper: #15140f;
+  --paper-raised: #1c1b16;
+  --ink: #f3f1ea;
+  --ink-muted: #a39d8e;
+  --ink-faint: #726c5f;
+  --border: #322f26;
+  --border-strong: #423e30;
+  --brass: #d79a4d;
+  --brass-ink: #17130a;
+  --brass-tint: #2c2313;
+  --focus-ring: #d79a4d;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-brass: var(--brass);
+  --color-brass-ink: var(--brass-ink);
+  --color-brass-tint: var(--brass-tint);
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-data: var(--font-plex-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--brass-tint);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
