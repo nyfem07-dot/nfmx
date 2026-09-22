@@ -5,10 +5,24 @@ import { HeroMosaic } from "@/components/HeroMosaic";
 import { ToolCard } from "@/components/ToolCard";
 import { CategoryTile } from "@/components/CategoryTile";
 import { categories } from "@/lib/categories";
-import { popularTools, categoryCounts, tools } from "@/lib/tools";
+import { categoryCounts, tools } from "@/lib/tools";
+
+const homepagePopularSlugs = [
+  "compress-image",
+  "image-converter",
+  "color-palette",
+  "pdf-merge",
+  "qr-generator",
+  "word-counter",
+  "unit-converter",
+  "password-generator",
+];
 
 export default function Home() {
-  const popular = popularTools();
+  const popular = homepagePopularSlugs
+    .map((slug) => tools.find((tool) => tool.slug === slug))
+    .filter((tool) => tool !== undefined);
+
   const counts = categoryCounts();
   const liveCount = tools.filter((t) => t.status === "live").length;
 
@@ -23,8 +37,8 @@ export default function Home() {
 
             <p className="mt-5 max-w-lg text-[1.1rem] leading-[1.7] text-ink-muted">
               NFMX is a growing set of small, focused tools for images,
-PDFs, text and more — no sign-up, no clutter, and most of it
-runs right in your browser.
+              PDFs, text and more — no sign-up, no clutter, and most of it
+              runs right in your browser.
             </p>
 
             <div className="mt-8 max-w-lg">
@@ -32,7 +46,8 @@ runs right in your browser.
             </div>
 
             <p className="mt-4 text-sm font-medium text-ink-faint">
-              {liveCount} tools ready to use now · {tools.length - liveCount} more on the way
+              {liveCount} tools ready to use now · {tools.length - liveCount}{" "}
+              more on the way
             </p>
           </div>
 
