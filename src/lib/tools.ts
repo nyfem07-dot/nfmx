@@ -1,4 +1,4 @@
-import {
+﻿import {
   Activity,
   AudioLines,
   Braces,
@@ -14,9 +14,11 @@ import {
   Link2,
   QrCode,
   Radio,
+  Regex,
   Ruler,
   ScanLine,
   Scissors,
+  Search,
   Sparkles,
   SprayCan,
   Type,
@@ -54,395 +56,249 @@ export const tools: ToolDefinition[] = [
   {
     slug: "compress-image",
     name: "Compress Image",
-    shortDescription:
-      "Reduce image file size without unnecessary quality loss.",
+    shortDescription: "Reduce image file size while keeping quality high.",
     helpText:
-      "Upload an image and compress it directly in your browser.",
+      "Upload an image, choose your preferred compression level, and download a smaller file.",
     category: "images",
     icon: Image,
     status: "live",
-    keywords: [
-      "image",
-      "compress",
-      "size",
-      "optimize",
-      "jpg",
-      "png",
-      "webp",
-    ],
+    keywords: ["compress", "image", "jpg", "jpeg", "png", "webp", "reduce"],
     popular: true,
   },
   {
     slug: "image-converter",
     name: "Image Converter",
-    shortDescription:
-      "Convert images between JPG, PNG and WebP.",
+    shortDescription: "Convert images between popular formats.",
     helpText:
-      "Convert common image formats directly in your browser.",
+      "Convert JPG, PNG, WebP and other supported image formats directly in your browser.",
     category: "images",
     icon: FileImage,
     status: "live",
-    keywords: [
-      "image",
-      "convert",
-      "jpg",
-      "png",
-      "webp",
-      "format",
-    ],
+    keywords: ["image", "converter", "jpg", "jpeg", "png", "webp", "convert"],
     popular: true,
   },
   {
     slug: "resize-image",
     name: "Resize Image",
-    shortDescription:
-      "Resize images to exact dimensions or by percentage.",
+    shortDescription: "Resize images to exact dimensions or percentages.",
     helpText:
-      "Choose the dimensions you need and export the resized image.",
+      "Set custom width and height values or resize an image proportionally.",
     category: "images",
     icon: ScanLine,
     status: "live",
-    keywords: [
-      "image",
-      "resize",
-      "dimensions",
-      "scale",
-      "width",
-      "height",
-    ],
+    keywords: ["resize", "image", "width", "height", "dimensions", "scale"],
   },
   {
     slug: "remove-background",
     name: "Remove Background",
-    shortDescription:
-      "Remove an image background automatically.",
+    shortDescription: "Remove the background from an image automatically.",
     helpText:
-      "Use AI background removal directly in your browser.",
+      "Upload an image and let the browser process it into a transparent-background image.",
     category: "images",
-    icon: Sparkles,
+    icon: Image,
     status: "live",
-    keywords: [
-      "image",
-      "background",
-      "remove",
-      "transparent",
-      "ai",
-    ],
+    keywords: ["remove", "background", "transparent", "image", "cutout"],
   },
   {
     slug: "color-palette",
-    name: "Color Palette Studio",
-    shortDescription:
-      "Generate complementary, analogous, triadic, and monochromatic color palettes.",
+    name: "Color Palette",
+    shortDescription: "Extract and explore colors from an image.",
     helpText:
-      "Create useful color combinations from a base HEX color and copy HEX, RGB, or HSL values.",
+      "Upload an image to generate a useful color palette with copyable color values.",
     category: "images",
-    icon: Sparkles,
+    icon: SprayCan,
     status: "live",
+    keywords: ["color", "palette", "image", "hex", "colors", "extract"],
     popular: true,
-    keywords: [
-      "color",
-      "palette",
-      "color palette",
-      "hex",
-      "rgb",
-      "hsl",
-      "complementary",
-      "analogous",
-      "triadic",
-      "monochromatic",
-      "designer",
-      "colors",
-    ],
   },
   {
     slug: "screenshot-beautifier",
     name: "Screenshot Beautifier",
-    shortDescription:
-      "Turn screenshots into polished images with backgrounds, spacing, rounded corners, and shadows.",
+    shortDescription: "Turn screenshots into polished presentation images.",
     helpText:
-      "Upload a screenshot and create a clean presentation-ready image entirely in your browser.",
+      "Upload a screenshot, customize its appearance, and export a cleaner presentation-ready image.",
     category: "images",
-    icon: Sparkles,
+    icon: Image,
     status: "live",
     keywords: [
       "screenshot",
       "beautify",
-      "image",
       "presentation",
       "mockup",
+      "image",
       "background",
-      "shadow",
-      "rounded corners",
-      "padding",
     ],
   },
   {
     slug: "pdf-merge",
-    name: "Merge PDF",
-    shortDescription:
-      "Combine multiple PDF files into one document.",
+    name: "PDF Merge",
+    shortDescription: "Combine multiple PDF files into one document.",
     helpText:
-      "Select multiple PDF files and merge them in your chosen order.",
+      "Upload multiple PDFs, arrange them in the order you want, and download one combined PDF.",
     category: "pdf",
     icon: FileText,
     status: "live",
-    keywords: [
-      "pdf",
-      "merge",
-      "combine",
-      "join",
-    ],
+    keywords: ["pdf", "merge", "combine", "join", "documents"],
     popular: true,
   },
   {
     slug: "pdf-split",
-    name: "Split PDF",
-    shortDescription:
-      "Extract selected pages from a PDF.",
+    name: "PDF Split",
+    shortDescription: "Extract selected pages from a PDF.",
     helpText:
-      "Upload a PDF and choose which pages to extract.",
+      "Upload a PDF and choose the pages you want to extract into a new document.",
     category: "pdf",
     icon: Scissors,
     status: "live",
-    keywords: [
-      "pdf",
-      "split",
-      "pages",
-      "extract",
-    ],
+    keywords: ["pdf", "split", "extract", "pages", "document"],
   },
   {
     slug: "pdf-compressor",
-    name: "Compress PDF",
-    shortDescription:
-      "Reduce the size of a PDF document.",
+    name: "PDF Compressor",
+    shortDescription: "Reduce the size of PDF files.",
     helpText:
-      "Compress PDF content in your browser.",
+      "Upload a PDF and process it into a smaller file for easier sharing and storage.",
     category: "pdf",
     icon: FileText,
     status: "live",
-    keywords: [
-      "pdf",
-      "compress",
-      "size",
-      "optimize",
-    ],
+    keywords: ["pdf", "compress", "reduce", "size", "document"],
   },
   {
     slug: "global-radio",
     name: "Global Radio",
-    shortDescription:
-      "Listen to live radio stations from around the world.",
+    shortDescription: "Listen to radio stations from around the world.",
     helpText:
-      "Search and play live internet radio stations.",
+      "Search global radio stations and play available live streams directly from your browser.",
     category: "media",
     icon: Radio,
     status: "live",
-    keywords: [
-      "radio",
-      "live",
-      "stations",
-      "music",
-      "world",
-    ],
+    keywords: ["radio", "live", "stations", "music", "world", "stream"],
   },
   {
     slug: "qr-generator",
     name: "QR Generator",
-    shortDescription:
-      "Create QR codes for links, text and more.",
+    shortDescription: "Create QR codes from text, links and other information.",
     helpText:
-      "Enter content and generate a downloadable QR code.",
-    category: "social",
+      "Enter your content, generate a QR code, and download the resulting image.",
+    category: "internet",
     icon: QrCode,
     status: "live",
-    keywords: [
-      "qr",
-      "qrcode",
-      "code",
-      "link",
-      "generator",
-    ],
+    keywords: ["qr", "qrcode", "generator", "code", "url"],
     popular: true,
   },
   {
     slug: "word-counter",
     name: "Word Counter",
-    shortDescription:
-      "Count words, characters and reading time.",
+    shortDescription: "Count words, characters, sentences and paragraphs.",
     helpText:
-      "Paste text to see word count, character count and estimated reading time.",
+      "Paste or type text to instantly see useful writing statistics.",
     category: "text",
     icon: Type,
     status: "live",
-    keywords: [
-      "word",
-      "count",
-      "characters",
-      "reading time",
-    ],
+    keywords: ["word", "counter", "characters", "sentences", "text"],
     popular: true,
   },
   {
     slug: "text-cleaner",
     name: "Text Cleaner",
-    shortDescription:
-      "Clean spaces, line breaks and unwanted formatting.",
+    shortDescription: "Clean and normalize messy text instantly.",
     helpText:
-      "Paste text and remove unnecessary whitespace and formatting.",
+      "Remove extra spaces, clean line breaks, normalize text and prepare content for reuse.",
     category: "text",
-    icon: SprayCan,
+    icon: Sparkles,
     status: "live",
-    keywords: [
-      "clean",
-      "text",
-      "whitespace",
-      "format",
-    ],
+    keywords: ["text", "clean", "spaces", "format", "normalize"],
   },
   {
     slug: "json-formatter",
     name: "JSON Formatter",
-    shortDescription:
-      "Pretty-print, validate and minify JSON.",
+    shortDescription: "Format, validate and inspect JSON data.",
     helpText:
-      "Format JSON for easier reading or minify it for compact output.",
-    category: "text",
+      "Paste JSON to format it neatly and identify invalid JSON quickly.",
+    category: "converters",
     icon: Braces,
     status: "live",
-    keywords: [
-      "json",
-      "format",
-      "validate",
-      "minify",
-      "pretty print",
-    ],
+    keywords: ["json", "formatter", "format", "validate", "developer"],
   },
   {
     slug: "currency-converter",
     name: "Currency Converter",
-    shortDescription:
-      "Convert between world currencies.",
+    shortDescription: "Convert between currencies using current exchange rates.",
     helpText:
-      "Convert values between supported currencies using current exchange rates.",
+      "Choose two currencies, enter an amount, and see the converted value.",
     category: "converters",
     icon: CircleDollarSign,
     status: "live",
-    keywords: [
-      "currency",
-      "money",
-      "exchange",
-      "convert",
-    ],
+    keywords: ["currency", "converter", "exchange", "money", "rates"],
   },
   {
     slug: "unit-converter",
     name: "Unit Converter",
-    shortDescription:
-      "Convert between common measurement units.",
+    shortDescription: "Convert common units quickly and accurately.",
     helpText:
-      "Convert length, weight, temperature and other common units.",
+      "Convert length, weight, temperature, area, volume and other everyday units.",
     category: "converters",
     icon: Ruler,
     status: "live",
-    keywords: [
-      "unit",
-      "convert",
-      "length",
-      "weight",
-      "temperature",
-    ],
+    keywords: ["unit", "converter", "length", "weight", "temperature"],
     popular: true,
   },
   {
     slug: "password-generator",
     name: "Password Generator",
-    shortDescription:
-      "Create strong, random passwords.",
+    shortDescription: "Generate strong random passwords.",
     helpText:
-      "Generate secure passwords with customizable length and character sets.",
+      "Choose password length and character types to create a strong password locally.",
     category: "privacy",
     icon: KeyRound,
     status: "live",
-    keywords: [
-      "password",
-      "generator",
-      "security",
-      "random",
-    ],
+    keywords: ["password", "generator", "secure", "random", "security"],
     popular: true,
   },
   {
     slug: "video-compressor",
     name: "Video Compressor",
-    shortDescription:
-      "Reduce video file size directly in your browser.",
+    shortDescription: "Compress videos directly in your browser.",
     helpText:
-      "Compress MP4 videos using browser-based processing.",
+      "Upload a video, choose a compression level, and export a smaller MP4 file.",
     category: "media",
     icon: Video,
     status: "live",
-    keywords: [
-      "video",
-      "compress",
-      "shrink",
-      "size",
-    ],
+    keywords: ["video", "compress", "mp4", "reduce", "size"],
   },
   {
     slug: "audio-converter",
     name: "Audio Converter",
-    shortDescription:
-      "Convert audio between common formats.",
+    shortDescription: "Convert audio files between popular formats.",
     helpText:
-      "Convert audio files between MP3, WAV, OGG and M4A.",
+      "Convert audio files to MP3, WAV, OGG or M4A directly in your browser.",
     category: "media",
     icon: AudioLines,
     status: "live",
-    keywords: [
-      "audio",
-      "convert",
-      "mp3",
-      "wav",
-      "format",
-    ],
+    keywords: ["audio", "converter", "mp3", "wav", "ogg", "m4a"],
   },
   {
     slug: "calculators",
     name: "Calculators",
     shortDescription:
-      "Useful calculators for everyday calculations.",
+      "Use practical calculators for everyday and technical work.",
     helpText:
-      "Access a collection of practical calculators.",
+      "Calculate percentages, discounts, BMI, loan values and other useful quantities.",
     category: "calculators",
     icon: Calculator,
     status: "live",
-    keywords: [
-      "calculator",
-      "math",
-      "calculate",
-      "percentage",
-    ],
+    keywords: ["calculator", "math", "percentage", "loan", "bmi"],
   },
   {
     slug: "ai-tools",
     name: "AI Tools",
-    shortDescription:
-      "Write, rewrite, summarize and improve text with AI.",
+    shortDescription: "Rewrite, summarize and transform text with AI.",
     helpText:
-      "Use AI for common writing and text-generation tasks.",
+      "Use AI-powered writing tools for summaries, rewriting, grammar fixes, emails and captions.",
     category: "ai",
     icon: Sparkles,
     status: "live",
-    keywords: [
-      "ai",
-      "write",
-      "rewrite",
-      "summarize",
-      "email",
-      "caption",
-    ],
+    keywords: ["ai", "writing", "summarize", "rewrite", "grammar", "email"],
   },
   {
     slug: "speed-test",
@@ -450,13 +306,13 @@ export const tools: ToolDefinition[] = [
     shortDescription:
       "Measure your download speed, upload speed and latency.",
     helpText:
-      "Run a browser-based connection test to measure download, upload and latency.",
+      "Run a browser-based network test to measure download speed, upload speed and latency.",
     category: "internet",
-    icon: Activity,
+    icon: Wifi,
     status: "live",
     keywords: [
-      "internet",
       "speed",
+      "internet",
       "speed test",
       "download",
       "upload",
@@ -467,20 +323,13 @@ export const tools: ToolDefinition[] = [
   {
     slug: "my-ip",
     name: "What's My IP",
-    shortDescription:
-      "Find your public IP address.",
+    shortDescription: "Find your public IP address.",
     helpText:
-      "See the public IP address used by your internet connection.",
+      "Check the public IP address currently visible to the internet.",
     category: "internet",
-    icon: Wifi,
+    icon: Globe2,
     status: "live",
-    keywords: [
-      "ip",
-      "ip address",
-      "public ip",
-      "network",
-      "internet",
-    ],
+    keywords: ["ip", "public ip", "my ip", "network", "internet"],
   },
   {
     slug: "website-status",
@@ -488,116 +337,325 @@ export const tools: ToolDefinition[] = [
     shortDescription:
       "Check whether a website is reachable and responding.",
     helpText:
-      "Check a website's HTTP status, response time, and final URL after redirects.",
+      "Enter a website URL to check its HTTP status, response time and availability.",
     category: "internet",
-    icon: Globe2,
+    icon: Activity,
     status: "live",
     keywords: [
       "website",
       "status",
-      "website checker",
-      "site checker",
-      "http status",
+      "checker",
+      "down",
       "uptime",
+      "http",
       "online",
-      "offline",
-      "response time",
     ],
   },
   {
     slug: "file-inspector",
     name: "File Inspector",
-    shortDescription:
-      "Inspect file details, type, size, and metadata directly in your browser.",
+    shortDescription: "Inspect file type, size and metadata.",
     helpText:
-      "Inspect a file's name, extension, MIME type, size, and last modified date without uploading it.",
+      "Choose a file to inspect its name, type, size and browser-accessible metadata.",
     category: "privacy",
     icon: FileSearch,
     status: "live",
-    keywords: [
-      "file",
-      "file inspector",
-      "file information",
-      "metadata",
-      "mime type",
-      "file type",
-      "file size",
-      "extension",
-    ],
+    keywords: ["file", "inspector", "metadata", "type", "size"],
   },
   {
     slug: "hash-generator",
     name: "Hash Generator",
-    shortDescription:
-      "Generate SHA-256, SHA-384, and SHA-512 hashes from text or files.",
+    shortDescription: "Generate SHA-256, SHA-384 and SHA-512 hashes.",
     helpText:
-      "Generate cryptographic hashes locally in your browser without uploading your data.",
+      "Hash text or files locally in your browser using standard SHA algorithms.",
     category: "privacy",
     icon: Hash,
     status: "live",
-    keywords: [
-      "hash",
-      "hash generator",
-      "sha256",
-      "sha-256",
-      "sha384",
-      "sha-384",
-      "sha512",
-      "sha-512",
-      "checksum",
-      "file hash",
-      "text hash",
-    ],
+    keywords: ["hash", "sha256", "sha384", "sha512", "checksum", "security"],
   },
   {
     slug: "url-inspector",
     name: "URL Inspector",
-    shortDescription:
-      "Break down URLs into their individual components.",
+    shortDescription: "Break down and inspect every part of a URL.",
     helpText:
-      "Inspect a URL's protocol, hostname, port, path, query parameters and fragment.",
+      "Inspect the protocol, hostname, path, query parameters, fragment and other URL components.",
     category: "internet",
     icon: Link2,
     status: "live",
+    keywords: ["url", "inspector", "parser", "query", "hostname", "protocol"],
+  },
+  {
+    slug: "social-media-image-maker",
+    name: "Social Media Image Maker",
+    shortDescription: "Create polished images for social media posts.",
+    helpText:
+      "Create social media graphics with custom text, backgrounds and export sizes.",
+    category: "social",
+    icon: Image,
+    status: "live",
     keywords: [
-      "url",
-      "url inspector",
-      "url parser",
-      "link",
-      "domain",
-      "hostname",
-      "query",
-      "parameters",
-      "path",
-      "protocol",
+      "social media",
+      "image",
+      "instagram",
+      "twitter",
+      "facebook",
+      "post",
+      "graphic",
+    ],
+  },
+  {
+    slug: "image-cropper",
+    name: "Image Cropper",
+    shortDescription: "Crop images to custom dimensions and aspect ratios.",
+    helpText:
+      "Upload an image, choose a crop area and export the result in your preferred format.",
+    category: "images",
+    icon: ScanLine,
+    status: "live",
+    keywords: ["crop", "image", "resize", "aspect ratio", "photo"],
+  },
+  {
+    slug: "image-watermark",
+    name: "Image Watermark",
+    shortDescription: "Add text watermarks to images.",
+    helpText:
+      "Upload an image, customize a watermark and export the finished image locally.",
+    category: "images",
+    icon: SprayCan,
+    status: "live",
+    keywords: ["watermark", "image", "logo", "text", "copyright"],
+  },
+  {
+    slug: "image-to-pdf",
+    name: "Image to PDF",
+    shortDescription: "Convert one or more images into a PDF.",
+    helpText:
+      "Upload images, arrange them and generate a downloadable PDF document.",
+    category: "pdf",
+    icon: FileImage,
+    status: "live",
+    keywords: ["image", "pdf", "convert", "jpg", "png", "document"],
+  },
+  {
+    slug: "pdf-to-images",
+    name: "PDF to Images",
+    shortDescription: "Convert PDF pages into image files.",
+    helpText:
+      "Upload a PDF and export its pages as PNG images directly in your browser.",
+    category: "pdf",
+    icon: FileImage,
+    status: "live",
+    keywords: ["pdf", "images", "png", "convert", "pages", "extract"],
+  },
+  {
+    slug: "invoice-generator",
+    name: "Invoice Generator",
+    shortDescription:
+      "Create professional invoices and download them as PDF.",
+    helpText:
+      "Build an invoice with business details, customer information, line items, taxes, discounts and payment notes.",
+    category: "calculators",
+    icon: FileText,
+    status: "live",
+    keywords: [
+      "invoice",
+      "invoice generator",
+      "billing",
+      "receipt",
+      "pdf",
+      "business",
+      "freelance",
+    ],
+  },
+  {
+    slug: "api-tester",
+    name: "API Tester",
+    shortDescription:
+      "Send HTTP requests and inspect API responses directly in your browser.",
+    helpText:
+      "Test GET, POST, PUT, PATCH, and DELETE requests with custom headers and JSON bodies, then inspect response status, timing, headers, and formatted JSON.",
+    category: "internet",
+    icon: Braces,
+    status: "live",
+    keywords: [
+      "api",
+      "api tester",
+      "rest api",
+      "rest client",
+      "http",
+      "http client",
+      "request",
+      "response",
+      "get",
+      "post",
+      "put",
+      "patch",
+      "delete",
+      "json",
+      "headers",
+      "developer",
+    ],
+  },
+  {
+    slug: "event-finder",
+    name: "Event Finder",
+    shortDescription:
+      "Find upcoming football matches, times, venues and event details.",
+    helpText:
+      "Browse upcoming football fixtures across major competitions, search teams and venues, and see kickoff times in your local timezone.",
+    category: "internet",
+    icon: Search,
+    status: "live",
+    keywords: [
+      "football",
+      "soccer",
+      "event",
+      "event finder",
+      "football fixtures",
+      "fixtures",
+      "matches",
+      "premier league",
+      "la liga",
+      "serie a",
+      "bundesliga",
+      "ligue 1",
+      "champions league",
+      "match time",
+      "where to watch",
+    ],
+  },
+  {
+    slug: "text-diff-checker",
+    name: "Text Diff Checker",
+    shortDescription:
+      "Compare two texts and see exactly what changed.",
+    helpText:
+      "Compare original and updated text to identify added, removed and unchanged words.",
+    category: "text",
+    icon: FileText,
+    status: "live",
+    keywords: [
+      "text",
+      "diff",
+      "difference",
+      "compare",
+      "comparison",
+      "changes",
+      "added",
+      "removed",
+      "code diff",
+    ],
+  },
+  {
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    shortDescription: "Decode JSON Web Tokens and inspect their contents.",
+    helpText:
+      "Decode JWT headers, payloads and signatures locally in your browser and inspect common token timestamps.",
+    category: "privacy",
+    icon: KeyRound,
+    status: "live",
+    keywords: [
+      "jwt",
+      "jwt decoder",
+      "json web token",
+      "token",
+      "decode jwt",
+      "developer",
+      "authentication",
+      "authorization",
+      "header",
+      "payload",
+      "signature",
+      "exp",
+      "iat",
+    ],
+  },
+  {
+    slug: "regex-tester",
+    name: "Regex Tester",
+    shortDescription:
+      "Test regular expressions and inspect matches instantly.",
+    helpText:
+      "Test regex patterns against text, highlight matches, inspect match positions and view capture groups directly in your browser.",
+    category: "text",
+    icon: Regex,
+    status: "live",
+    keywords: [
+      "regex",
+      "regex tester",
+      "regular expression",
+      "regexp",
+      "pattern",
+      "matches",
+      "capture groups",
+      "developer",
+      "text",
+      "search",
+    ],
+  },
+  {
+    slug: "base64",
+    name: "Base64 Encoder / Decoder",
+    shortDescription:
+      "Encode text to Base64 or decode Base64 back into readable text.",
+    helpText:
+      "Encode and decode Base64 strings locally in your browser, with support for URL-safe Base64.",
+    category: "converters",
+    icon: Braces,
+    status: "live",
+    keywords: [
+      "base64",
+      "base64 encoder",
+      "base64 decoder",
+      "encode",
+      "decode",
+      "converter",
+      "url safe",
+      "developer",
+      "text",
+    ],
+  },
+  {
+    slug: "markdown-editor",
+    name: "Markdown Editor",
+    shortDescription:
+      "Write Markdown with a live preview and export your document.",
+    helpText:
+      "Write Markdown, preview the formatted result instantly, copy the source or download it as a Markdown file.",
+    category: "text",
+    icon: FileText,
+    status: "live",
+    keywords: [
+      "markdown",
+      "markdown editor",
+      "md",
+      "editor",
+      "preview",
+      "documentation",
+      "developer",
+      "writing",
+      "text",
     ],
   },
 ];
 
-export function popularTools() {
-  return tools.filter((tool) => tool.popular);
-}
-
 export function categoryCounts() {
   return tools.reduce(
     (counts, tool) => {
-      counts[tool.category] =
-        (counts[tool.category] || 0) + 1;
-
+      counts[tool.category] = (counts[tool.category] || 0) + 1;
       return counts;
     },
     {} as Record<ToolCategory, number>,
   );
 }
 
-export function getTool(slug: string) {
-  return tools.find((tool) => tool.slug === slug);
+export function toolsByCategory(category: ToolCategory) {
+  return tools.filter((tool) => tool.category === category);
 }
 
-export function toolsByCategory(category: ToolCategory) {
-  return tools.filter(
-    (tool) => tool.category === category,
-  );
+export function getTool(slug: string) {
+  return tools.find((tool) => tool.slug === slug);
 }
 
 export function searchTools(query: string) {

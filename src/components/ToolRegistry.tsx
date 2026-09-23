@@ -1,4 +1,4 @@
-import type { Tool } from "@/lib/types";
+﻿import type { Tool } from "@/lib/types";
 import { CompressImage } from "./tools/CompressImage";
 import { ImageConverter } from "./tools/ImageConverter";
 import { ResizeImage } from "./tools/ResizeImage";
@@ -25,8 +25,21 @@ import WebsiteStatusTools from "./tools/website-status/WebsiteStatusTools";
 import FileInspectorTools from "./tools/file-inspector/FileInspectorTools";
 import HashGeneratorTools from "./tools/hash-generator/HashGeneratorTools";
 import UrlInspectorTools from "./tools/url-inspector/UrlInspectorTools";
+import InvoiceGeneratorTools from "./tools/invoice-generator/InvoiceGeneratorTools";
+import ApiTesterTools from "./tools/api-tester/ApiTesterTools";
+import EventFinderTools from "./tools/event-finder/EventFinderTools";
+import TextDiffCheckerTools from "./tools/text-diff-checker/TextDiffCheckerTools";
+import JwtDecoderTools from "./tools/jwt-decoder/JwtDecoderTools";
+import RegexTesterTools from "./tools/regex-tester/RegexTesterTools";
+import Base64Tools from "./tools/base64/Base64Tools";
+import MarkdownEditorTools from "./tools/markdown-editor/MarkdownEditorTools";
 import ColorPaletteTools from "./tools/color-palette/ColorPaletteTools";
 import ScreenshotBeautifierTools from "./tools/screenshot-beautifier/ScreenshotBeautifierTools";
+import SocialMediaImageMakerTools from "./tools/social-media-image-maker/SocialMediaImageMakerTools";
+import ImageCropperTools from "./tools/image-cropper/ImageCropperTools";
+import ImageWatermarkTools from "./tools/image-watermark/ImageWatermarkTools";
+import ImageToPdfTools from "./tools/image-to-pdf/ImageToPdfTools";
+import PdfToImagesTools from "./tools/pdf-to-images/PdfToImagesTools";
 const registry: Record<string, React.ComponentType> = {
   "calculators": CalculatorTools,
   "ai-tools": AiTools,
@@ -53,8 +66,21 @@ const registry: Record<string, React.ComponentType> = {
 "file-inspector": FileInspectorTools,
 "hash-generator": HashGeneratorTools,
 "url-inspector": UrlInspectorTools,
+  "invoice-generator": InvoiceGeneratorTools,
+  "api-tester": ApiTesterTools,
+  "event-finder": EventFinderTools,
+  "text-diff-checker": TextDiffCheckerTools,
+  "jwt-decoder": JwtDecoderTools,
+  "regex-tester": RegexTesterTools,
+  "base64": Base64Tools,
+  "markdown-editor": MarkdownEditorTools,
 "color-palette": ColorPaletteTools,
 "screenshot-beautifier": ScreenshotBeautifierTools,
+"social-media-image-maker": SocialMediaImageMakerTools,
+"image-cropper": ImageCropperTools,
+"image-watermark": ImageWatermarkTools,
+"image-to-pdf": ImageToPdfTools,
+"pdf-to-images": PdfToImagesTools,
 };
 
 export function ToolImplementation({ tool }: { tool: Tool }) {
@@ -62,6 +88,14 @@ export function ToolImplementation({ tool }: { tool: Tool }) {
   if (!Component) return <ComingSoon tool={tool} />;
   return <Component />;
 }
+
+
+
+
+
+
+
+
 
 
 
