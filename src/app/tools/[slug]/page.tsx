@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTool, tools } from "@/lib/tools";
 import { ToolShell } from "@/components/ToolShell";
 import { ToolImplementation } from "@/components/ToolRegistry";
+
+const siteUrl = "https://nfmx.vercel.app";
 
 export function generateStaticParams() {
   return tools.map((t) => ({ slug: t.slug }));
@@ -18,9 +20,48 @@ export async function generateMetadata({
 
   if (!tool) return {};
 
+  const title = `${tool.name} — Free Online Tool | NFMX`;
+  const description = tool.shortDescription;
+
   return {
-    title: `${tool.name} — NFMX`,
-    description: tool.shortDescription,
+    title,
+    description,
+
+    keywords: [
+      tool.name,
+      `${tool.name} online`,
+      `${tool.name} free`,
+      "NFMX",
+      "free online tools",
+      ...(tool.keywords ?? []),
+    ],
+
+    alternates: {
+      canonical: `/tools/${tool.slug}`,
+    },
+
+    openGraph: {
+      type: "website",
+      url: `${siteUrl}/tools/${tool.slug}`,
+      siteName: "NFMX",
+      title,
+      description,
+    },
+
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+
+    robots: {
+      index: tool.status === "live",
+      follow: true,
+      googleBot: {
+        index: tool.status === "live",
+        follow: true,
+      },
+    },
   };
 }
 
