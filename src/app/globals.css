@@ -1,20 +1,20 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 :root {
-  --background: #080a12;
-  --foreground: #f8fafc;
+  --background: #f7f8fc;
+  --foreground: #111827;
 
-  --paper: #080a12;
-  --ink: #f8fafc;
+  --paper: #f7f8fc;
+  --ink: #111827;
 
-  --primary: #5b7cff;
-  --primary-dark: #4665e8;
-  --accent: #9b6cff;
+  --primary: #4f6df5;
+  --primary-dark: #3d58d4;
+  --accent: #8056d9;
 
-  --muted: #a1abc0;
-  --border: #242a3a;
+  --muted: #667085;
+  --border: #e2e5ec;
 
-  --card: #101421;
+  --card: #ffffff;
 }
 
 .dark {
@@ -69,6 +69,25 @@ body {
   background:
     radial-gradient(
       circle at 50% -20%,
+      rgba(91, 124, 255, 0.12),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(155, 108, 255, 0.06),
+      transparent 28%
+    ),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.dark body {
+  background:
+    radial-gradient(
+      circle at 50% -20%,
       rgba(91, 124, 255, 0.2),
       transparent 34%
     ),
@@ -78,10 +97,6 @@ body {
       transparent 28%
     ),
     var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body), system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 button,
@@ -113,7 +128,7 @@ video {
 
 input::placeholder,
 textarea::placeholder {
-  color: #667085;
+  color: var(--muted);
 }
 
 /* Premium surfaces */
@@ -151,16 +166,16 @@ select:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #080a12;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2c3448;
+  background: var(--border);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5b7cff;
+  background: var(--primary);
 }
 
 /* NFMX visual utilities */
@@ -198,11 +213,21 @@ select:focus {
   background:
     linear-gradient(
       135deg,
+      rgba(91, 124, 255, 0.08),
+      rgba(155, 108, 255, 0.05)
+    ),
+    var(--card);
+  border-color: rgba(91, 124, 255, 0.2);
+}
+
+.dark .nfmx-accent-surface {
+  background:
+    linear-gradient(
+      135deg,
       rgba(91, 124, 255, 0.12),
       rgba(155, 108, 255, 0.08)
     ),
     #101421;
-  border-color: rgba(91, 124, 255, 0.2);
 }
 
 /* Premium hover */
@@ -210,7 +235,13 @@ select:focus {
 .nfmx-hover:hover {
   border-color: rgba(91, 124, 255, 0.42);
   box-shadow:
-    0 10px 35px rgba(20, 30, 70, 0.25),
+    0 10px 35px rgba(20, 30, 70, 0.12),
     0 0 25px rgba(91, 124, 255, 0.07);
   transform: translateY(-2px);
+}
+
+.dark .nfmx-hover:hover {
+  box-shadow:
+    0 10px 35px rgba(20, 30, 70, 0.25),
+    0 0 25px rgba(91, 124, 255, 0.07);
 }
