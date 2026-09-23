@@ -75,9 +75,41 @@ export default async function ToolPage({
 
   if (!tool) notFound();
 
+  const toolUrl = `${siteUrl}/tools/${tool.slug}`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: tool.name,
+    url: toolUrl,
+    description: tool.shortDescription,
+    applicationCategory: "UtilitiesApplication",
+    operatingSystem: "All",
+    isAccessibleForFree: true,
+    offers: {
+      "@type": "Offer",
+      price: 0,
+      priceCurrency: "USD",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "NFMX",
+      url: siteUrl,
+    },
+  };
+
   return (
-    <ToolShell tool={tool}>
-      <ToolImplementation tool={tool} />
-    </ToolShell>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
+      <ToolShell tool={tool}>
+        <ToolImplementation tool={tool} />
+      </ToolShell>
+    </>
   );
 }
