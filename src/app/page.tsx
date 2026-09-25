@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { SearchBox } from "@/components/SearchBox";
 import { HeroMosaic } from "@/components/HeroMosaic";
@@ -37,7 +37,7 @@ export default function Home() {
 
             <p className="mt-5 max-w-lg text-[1.1rem] leading-[1.7] text-ink-muted">
               NFMX is a growing set of small, focused tools for images,
-              PDFs, text and more — no sign-up, no clutter, and most of it
+              PDFs, text and more â€” no sign-up, no clutter, and most of it
               runs right in your browser.
             </p>
 
@@ -45,10 +45,7 @@ export default function Home() {
               <SearchBox size="hero" />
             </div>
 
-            <p className="mt-4 text-sm font-medium text-ink-faint">
-              {liveCount} tools ready to use now · {tools.length - liveCount}{" "}
-              more on the way
-            </p>
+            <p className="mt-4 text-sm font-medium text-ink-faint">40 free tools ready to use</p>
           </div>
 
           <div className="mx-auto w-full max-w-xs sm:max-w-sm">
@@ -89,7 +86,7 @@ export default function Home() {
 
           <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-ink-muted sm:text-base">
             Ten categories, one growing toolkit. Tools are being added
-            category by category — start wherever you need help today.
+            category by category â€” start wherever you need help today.
           </p>
 
           <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
